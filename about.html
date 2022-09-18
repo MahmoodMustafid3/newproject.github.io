@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>CIFSE</title>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="course.html">COURSES</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>About Us</h1>
+    </section>
+
+    <!-- about us comtent -->
+
+    <section class="about-us">
+
+        <div class="row">
+            <div class="about-col">
+                <h1>Central Institute of Fire and Safety Engineering, Bokakhat</h1>
+                <p>CIFSE is a well known educational institute of Fire and Safety sector. Its situated in Bokakhat town, Jiten Baruah Path, ward no 1. CIFSE is registered under Human resources education development Govt. of India. Its head office is in Gujarat. We have 3 Branches in Assam - Bokakhat, Duliajan, Digboi.</p>
+                <h3>Details of Officials</h3>
+                <p>Rakesh Gogoi (Director) <br>
+                Sewali Chetia (Cleark) <br>
+            Abhiraz Phukon (Enquiry Dept.)</p>
+                <a href="" class="btnone red-btn">EXPLORE NOW</a>
+            </div>
+            <div class="about-col">
+                <img src="images/about.jpg" alt="">
+            </div>
+        </div>
+
+    </section>
+
+<!-- image slider -->
+
+
+<section class="image-sliderbody">
+
+    <div class="slide-container" >
+        <div class="slide">
+            <img src="new images/1.jpg" alt="">
+        </div>
+        
+        <div class="slide">
+            <img src="new images/3.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="new images/4.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="new images/5.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="new images/6.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="new images/7.jpg" alt="">
+        </div>
+        
+        <div class="slide">
+            <img src="new images/9.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="new images/10.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="new images/11.jpg" alt="">
+        </div>
+
+
+        <span class="arrow prev" onclick="controller(-1)">&#10094;</span>
+        <span class="arrow next" onclick="controller(1)">&#10095;</span>
+
+    </div>
+
+
+
+
+</section>
+
+
+
+
+
+
+<!-- footer -->
+
+<section class="footer">
+    <h4>About Us</h4>
+    <p>CIFSE is a well known educational institute of Fire and Safety sector...It's situated in Bokakhat town, Jiten Baruah path, ward no 1 <br>
+    CIFSE is registered under Human resources education development Govt. of India</p>
+    <div class="icons">
+       <a href="https://www.facebook.com/profile.php?id=100064101634479"> <i class="fa fa-facebook"></i></a>
+        <i class="fa fa-twitter" ></i>
+       <a href="https://instagram.com/cifse.bokakhat?igshid=YmMyMTA2M2Y="> <i class="fa fa-instagram" ></i></a>
+        <i class="fa fa-linkedin"></i>
+    </div>
+    <p>Copyright &copy; 2022 CIFSE All Right Reserved</p>
+</section>
+
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+
+<!-- slider script -->
+
+<script>
+
+    let flag = 0;
+
+    function controller(x){
+        flag = flag + x;
+        slideshow(flag);
+    }
+
+    slideshow(flag);
+
+    function slideshow(num){
+        let slides = document.getElementsByClassName('slide');
+
+        for(let y of slides){
+            y.style.display = "none";
+        }
+        if(num == slides.length){
+            flag = 0;
+            num = 0;
+        }
+        if(num < 0){
+            flag = slides.length-1;
+            num = slides.length-1;
+        }
+        slides[num].style.display = "block";
+
+        
+
+        
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
